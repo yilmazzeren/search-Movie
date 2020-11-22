@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux'
-import useStore  from '../redux/reducers/store'
+import {useStore}  from '../redux/reducers/store'
 import '../../styles/globals.css'
 
 

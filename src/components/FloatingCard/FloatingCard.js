@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom"
+import Link from "next/link"
 import styles from "../../../styles/Floating.module.css"
 import {searchAction} from "../../redux/actions/searchActions";
 import { useDispatch } from 'react-redux'
@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 
 
  function FloatingCard() {
-  const dispatch = useDispatch()
+  
   const [values,setValues] = useState({name:"",year:""}) 
 
+  const dispatch = useDispatch()
   useEffect(() => {
-     dispatch(searchAction(values))
+    dispatch(searchAction(values))
   })
-
 
     return (
           <div className={styles.main__floatingCard}>
@@ -28,7 +28,7 @@ import { useEffect, useState } from "react";
               </div>
               <div style={{display:"flex"}}><input value={values.name} onChange={e=>setValues({...values,name:e.target.value})} style={{width:"40vh"}} placeholder="Enter movie name here"/> </div>
               <div >
-                <Link ><a><button className={styles.main__floatingCardGroupButton}>Search</button></a></Link>
+                <Link href="searchResults"><a><button className={styles.main__floatingCardGroupButton}>Search</button></a></Link>
                 
                 </div>
             </div>
