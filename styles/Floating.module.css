@@ -1,0 +1,40 @@
+.main__floatingCard{
+    background: #FFFFFF;
+    box-shadow: 0px 16px 28px rgba(141, 40, 173, 0.15);
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 170px;
+    padding: 10px;
+    position: absolute;
+    top: 370px;
+}
+.main__floatingCardGroup{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__floatingCardGroup input,
+.main__floatingCardGroupType{
+    outline: none;
+    padding: 10px;
+    border: none;
+    background: #F3F3F3;
+    border-radius: 8px;
+   
+}
+.main__floatingCardGroupType{
+color:#636363;
+
+}
+.main__floatingCardGroupButton{
+    outline: none;
+    padding: 10px;
+    border: none;
+    background: #F5C518;
+    border-radius: 8px;
+    width: 150px;
+    color:white;
+}
+.main__floatingCardGroupButton:hover{
+    cursor: pointer;
+}

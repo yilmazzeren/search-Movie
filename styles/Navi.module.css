@@ -1,0 +1,37 @@
+.wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 2px 5px #f5efef;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 150px;
+  margin-right: 150px;
+  align-items: center;
+}
+.input__wrapper {
+  flex-grow: 3;
+  text-align: end;
+}
+.input__wrapper input {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #F3F3F3;
+    width: 50%;
+    outline: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;;
+}
+
+.icon {
+  font-size: 25px;
+  position: relative;
+  top: 10px;
+}
+.icon:hover {
+  cursor: pointer;
+}
