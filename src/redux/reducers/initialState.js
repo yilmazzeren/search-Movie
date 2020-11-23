@@ -1,3 +1,4 @@
 export default {
-    values:{}
+    values:{},
+    movie:{}
 }

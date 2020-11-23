@@ -1,0 +1,12 @@
+.searchWrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    margin: 68px 0 0 170px;
+   
+}
+
+.searchWrapper img {
+    border-radius: 8px;
+    max-width: 100%;
+}
