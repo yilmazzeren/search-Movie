@@ -7,15 +7,14 @@ export function getMovieSuccess(movie) {
     }
 }
 
-export function getMovie(name,year) {
+export function getMovie(name,year,type) {
      
     return function (dispatch) {
-      let url = `http://www.omdbapi.com/?t=${name}&y=${year}&apikey=d03ca61b`;
-    console.log(url)
+      let url = `http://www.omdbapi.com/?s=${name}&type=${type}&y=${year}&apikey=d03ca61b`;
+      console.log(url)
       return fetch(url)
         .then((response) => response.json())
         .then((result) => dispatch(getMovieSuccess(result)));
         
     };
-    
   }

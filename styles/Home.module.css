@@ -14,11 +14,14 @@
   width: 40%;
   color: white;
 }
-
-.populerMovies {
-  width: 942px;
+.populerMovies_wrapper {
+  width: 780px;
+  margin: 25px 0 0 170px; 
+}
+.populerMovies  {
+  margin-bottom: 15px;
   display: flex;
-  margin: 100px auto;
+  flex-direction: row;
   background: #fafafa;
   border-radius: 10px;
 }
@@ -41,7 +44,6 @@
 .populerMovies__top {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 .populerMovies__top p:first-child {
   max-width: 15%;

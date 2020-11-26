@@ -1,12 +1,32 @@
-.searchWrapper {
+.searchContainer{
     display: flex;
-    flex-direction: column;
-    max-width: 250px;
-    margin: 68px 0 0 170px;
-   
+    flex-wrap: wrap;
+    margin-left: 170px;
+    margin-right: 170px;
 }
 
+.searchWrapper {
+    max-width: 250px;
+    margin: 15px 100px 0 0;
+}
+
+.searchIcon{
+    position: absolute;
+    bottom: 13px;
+    background-color: white;
+    color: #F5C518;
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 24px;
+    right: 5px;
+    z-index: 2;
+}
+.searchIcon:hover{
+cursor: pointer;
+}
 .searchWrapper img {
     border-radius: 8px;
-    max-width: 100%;
+    width: 300px;
+    height: 400px;
+    object-fit: unset;
 }
