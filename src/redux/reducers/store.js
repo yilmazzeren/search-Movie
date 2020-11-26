@@ -1,19 +1,3 @@
-  
-// import {createStore,applyMiddleware} from "redux";
-// import { composeWithDevTools } from 'redux-devtools-extension';
-
-
-
-
-// import reducers from "./rootReducer"
-// import thunk from "redux-thunk"
-// import {useMemo} from "react"
-
-// export default function store () {
-//     return createStore(useMemo(reducers,composeWithDevTools(applyMiddleware(thunk))) )
-// }
-
-
 import {useMemo} from "react"
 import {createStore,applyMiddleware} from "redux"
 import {composeWithDevTools} from 'redux-devtools-extension'
