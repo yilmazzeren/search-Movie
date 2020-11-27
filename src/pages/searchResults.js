@@ -1,4 +1,6 @@
 import styles from "../../styles/SearchResults.module.css";
+import Head from "next/head";
+
 import { useSelector, useDispatch } from "react-redux";
 import Navigation from "../components/Navigation/Navigation";
 import { useEffect, useState } from "react";
@@ -36,6 +38,10 @@ function SearchResults() {
 
   return (
     <div>
+      <Head>
+        <title>Search Results</title>
+      </Head>
+      
       <Navigation />
       <h4
         style={{

@@ -3,7 +3,6 @@ import Head from "next/head";
 import Navigation from "../components/Navigation/Navigation";
 import FloatingCard from "../components/FloatingCard/FloatingCard";
 import Link from "next/link"
-import Slider from "react-slick";
 
  function HomePage({movie}) {
  

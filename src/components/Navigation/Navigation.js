@@ -3,18 +3,24 @@ import styles from "../../../styles/Navi.module.css";
 import { MdSearch } from "react-icons/md";
 import { useEffect, useState } from "react";
 import {getMovie} from "../../redux/actions/getMovie"
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 
 export default function Navigation() {
 
   const [title,setTitle] =useState("")
+  
   const dispatch =useDispatch();
-  const state= title.split(" ").join("+");
 
-  const searchMovieNavi = () => {
-        dispatch(getMovie(state,"",""))
-  }
+  const getmoviestate = useSelector((state) => state.getMovieReducer);
 
+  useEffect( async () => {
+  let value = title.split(" ").join("+")
+
+    dispatch(getMovie(value,"",""))
+  }, [title])
+
+  console.log(getmoviestate)
+  
   return (
     <div className={styles.wrapper}>
       <div className={styles.links}>
@@ -38,7 +44,7 @@ export default function Navigation() {
         <div className={styles.input__wrapper}>
           <input  onChange={e=>setTitle(e.target.value)} placeholder="Enter movie name here" />
           <Link href="searchResults">
-            <a><MdSearch onClick={searchMovieNavi} className={styles.icon} /></a>
+            <a><MdSearch  className={styles.icon} /></a>
           </Link>
         </div>
       </div>
