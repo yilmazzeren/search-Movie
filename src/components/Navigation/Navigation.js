@@ -3,7 +3,7 @@ import styles from "../../../styles/Navi.module.css";
 import { MdSearch } from "react-icons/md";
 import { useEffect, useState } from "react";
 import {getMovie} from "../../redux/actions/getMovie"
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export default function Navigation() {
 
@@ -11,7 +11,6 @@ export default function Navigation() {
   
   const dispatch =useDispatch();
 
-  const getmoviestate = useSelector((state) => state.getMovieReducer);
 
   useEffect( async () => {
   let value = title.split(" ").join("+")
@@ -19,7 +18,6 @@ export default function Navigation() {
     dispatch(getMovie(value,"",""))
   }, [title])
 
-  console.log(getmoviestate)
   
   return (
     <div className={styles.wrapper}>

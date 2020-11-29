@@ -6,13 +6,14 @@ import Navigation from "../components/Navigation/Navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getMovie } from "../redux/actions/getMovie";
+import {addFavorites} from "../redux/actions/addFavorites"
 import {MdFavoriteBorder} from "react-icons/md"
 
 function SearchResults() {
   const state = useSelector((state) => state.searchReducer);
   const movie = useSelector((state) => state.getMovieReducer);
 
-  const [heart,setHeart] = useState(true)
+  // const [heart,setHeart] = useState(true)
   const dispatch = useDispatch();
  
   useEffect(async () => {
@@ -22,18 +23,10 @@ function SearchResults() {
   }, []);
 
 
-  const addFavoritte = (e) => {
-    let sss=e.target.style;
-    if(heart) {
-      sss.backgroundColor="#F5C518"
-      sss.color="white"
-      setHeart(false)
-    } else {
-      sss.backgroundColor="white"
-      sss.color="#F5C518"
-      setHeart(true)
-    }
+  const addFavoritte = (item) => {
    
+    dispatch(addFavorites(item))
+    
   }
 
   return (
@@ -58,7 +51,7 @@ function SearchResults() {
          <div key={item.imdbID} className={styles.searchWrapper}>
           <div style={{position:"relative",width:"300px"}}>
             {item.Poster==="N/A"?  <img src="https://seattletarp.com/wp-content/uploads/2016/07/imageComingSoon.jpg"></img>: <img src={item.Poster}></img>} 
-            <MdFavoriteBorder onClick={addFavoritte} className={styles.searchIcon}/>
+            <MdFavoriteBorder onClick={()=>addFavoritte(item)} className={styles.searchIcon}/>
           </div>
           <p>IMDb :{item.imdbRating ?item.imdbRating:<span style={{color:"#F5C518"}}> no imdb information</span> }</p>
           <p>Year : <span style={{color:"#F5C518"}}>{item.Year}</span></p>
@@ -68,7 +61,7 @@ function SearchResults() {
         </div>
       ))
        : 
-        <div style={{margin:"20px 0 0 170px"}}>{movie.Error}</div> 
+        <div style={{marginTop:"20px"}}>Received error =&gt; <span style={{color:"red"}}>{movie.Error}</span></div> 
       }
       </div>
     </div>

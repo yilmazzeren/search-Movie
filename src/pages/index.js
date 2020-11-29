@@ -3,8 +3,14 @@ import Head from "next/head";
 import Navigation from "../components/Navigation/Navigation";
 import FloatingCard from "../components/FloatingCard/FloatingCard";
 import Link from "next/link"
-
+import {useDispatch} from "react-redux"
+import {addFavorites} from "../redux/actions/addFavorites"
  function HomePage({movie}) {
+
+  const dispatch = useDispatch()
+  const addFavorite = () => {
+    dispatch(addFavorites(movie))
+  }
  
   return (
     <div className="app__wrapper">
@@ -43,7 +49,7 @@ import Link from "next/link"
                   <p>{movie.Plot}</p>
                 </div>
                 <div className={styles.populerMovies__footer}>
-                  <button>Add to favorites</button>
+                  <button onClick={addFavorite}>Add to favorites</button>
                   <Link href="/"><a style={{marginLeft:"30px",alignSelf:"center",color:"#F5C518"}}>View Details</a></Link>
                 </div>
             </div>
