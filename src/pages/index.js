@@ -5,12 +5,31 @@ import FloatingCard from "../components/FloatingCard/FloatingCard";
 import Link from "next/link"
 import {useDispatch} from "react-redux"
 import {addFavorites} from "../redux/actions/addFavorites"
+import {viewDetail} from "../redux/actions/viewDetails"
+import { useState } from "react";
+
  function HomePage({movie}) {
 
+  const [changeColor,setChangeColor] =useState(true)
+  const [favori, setFavori] = useState("Add to favorites");
   const dispatch = useDispatch()
-  const addFavorite = () => {
+
+  const addFavorite = (e) => {
     dispatch(addFavorites(movie))
+    if(changeColor){
+      setFavori("Added to favorites")
+      e.target.style.backgroundColor="#ffeeb3"
+      e.target.style.color="#F5C518"
+      setChangeColor(false)
+    }else {
+      setFavori("Add to favorites")
+      e.target.style.color="white"
+      e.target.style.backgroundColor="#F5C518"
+      setChangeColor(true)
+    }
+
   }
+
  
   return (
     <div className="app__wrapper">
@@ -18,7 +37,7 @@ import {addFavorites} from "../redux/actions/addFavorites"
         <title>Home Page</title>
       </Head>
       <Navigation />
-      <main style={{position:"relative"}}>
+      <main style={{position:"relative",backgroundSize:"contain"}}>
           <div style={{background:"#F5C518",position:"relative"}}>
             <div className={styles.main}></div>
             <div className={styles.main__text}> 
@@ -49,8 +68,8 @@ import {addFavorites} from "../redux/actions/addFavorites"
                   <p>{movie.Plot}</p>
                 </div>
                 <div className={styles.populerMovies__footer}>
-                  <button onClick={addFavorite}>Add to favorites</button>
-                  <Link href="/"><a style={{marginLeft:"30px",alignSelf:"center",color:"#F5C518"}}>View Details</a></Link>
+                  <button className="asd" onClick={addFavorite}>{favori}</button>
+                  <Link href="viewDetails"><a onClick={()=>dispatch(viewDetail(movie.Title))} style={{marginLeft:"30px",alignSelf:"center",color:"#F5C518"}}>View Details</a></Link>
                 </div>
             </div>
           </div>

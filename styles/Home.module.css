@@ -1,6 +1,5 @@
 .main {
   background-image: url("../public/image/bg.png");
-  max-width: 100%;
   height: 400px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -73,4 +72,6 @@
   line-height: 24px;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
+

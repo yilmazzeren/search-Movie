@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "../../../styles/Navi.module.css";
-import { MdSearch } from "react-icons/md";
+import { MdSearch,MdDehaze } from "react-icons/md";
 import { useEffect, useState } from "react";
 import {getMovie} from "../../redux/actions/getMovie"
 import { useDispatch } from "react-redux";
@@ -46,6 +46,7 @@ export default function Navigation() {
           </Link>
         </div>
       </div>
+      <MdDehaze className={styles.naviBar} style={{display:"none"}} />
     </div>
   );
 }

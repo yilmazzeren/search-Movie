@@ -38,3 +38,10 @@ color:#636363;
 .main__floatingCardGroupButton:hover{
     cursor: pointer;
 }
+
+@media  (max-width: 910px) {
+   
+    .main__floatingCard {
+      margin: 25px auto;
+    }
+  }

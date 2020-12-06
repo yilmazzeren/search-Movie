@@ -1,0 +1,22 @@
+.detailWrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 50px 170px 0 170px;
+}
+
+.detailWrapper img {
+    height: 320px;
+    width: 250px;
+    border-radius: 20px;
+    margin-right: 25px;
+}
+
+.addFavoriButton {
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.addFavoriButton:hover{
+    color: #F5C518;
+}

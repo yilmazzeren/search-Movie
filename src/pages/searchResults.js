@@ -8,6 +8,7 @@ import Link from "next/link";
 import { getMovie } from "../redux/actions/getMovie";
 import {addFavorites} from "../redux/actions/addFavorites"
 import {MdFavoriteBorder} from "react-icons/md"
+import {viewDetail} from "../redux/actions/viewDetails"
 
 function SearchResults() {
   const state = useSelector((state) => state.searchReducer);
@@ -50,8 +51,10 @@ function SearchResults() {
       movie.Search.map(item=>(
          <div key={item.imdbID} className={styles.searchWrapper}>
           <div style={{position:"relative",width:"300px"}}>
+          <Link href="viewDetails"><a onClick={()=>dispatch(viewDetail(item.Title))} style={{position:"absolute",bottom:"10px",left:"5px",cursor:"pointer",color:"#F5C518"}}>Details</a></Link>
             {item.Poster==="N/A"?  <img src="https://seattletarp.com/wp-content/uploads/2016/07/imageComingSoon.jpg"></img>: <img src={item.Poster}></img>} 
             <MdFavoriteBorder onClick={()=>addFavoritte(item)} className={styles.searchIcon}/>
+            
           </div>
           <p>IMDb :{item.imdbRating ?item.imdbRating:<span style={{color:"#F5C518"}}> no imdb information</span> }</p>
           <p>Year : <span style={{color:"#F5C518"}}>{item.Year}</span></p>

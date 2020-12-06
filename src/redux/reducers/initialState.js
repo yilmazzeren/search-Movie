@@ -1,5 +1,6 @@
 export default {
     values:{},
     movie:{},
-    favorites:[]
+    favorites:[],
+    detail:{}
 }
