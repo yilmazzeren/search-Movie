@@ -21,6 +21,7 @@ http://www.omdbapi.com/
 
 ### Projeyi başlatmak için
 
--npm i
--cd search-Movie
--npm run dev
+### `npm install`
+### `cd search-Movie`
+### `npm run dev`
+
