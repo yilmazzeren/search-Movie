@@ -19,3 +19,8 @@ Proje girilen film tarih yılı ve türe göre film arama, istenilen filmleri fa
 
 http://www.omdbapi.com/
 
+### Projeyi başlatmak için
+
+-npm i
+-cd search-Movie
+-npm run dev
